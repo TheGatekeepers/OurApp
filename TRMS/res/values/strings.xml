@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, TRMSActivity!</string>
+    <string name="app_name">TRMS</string>
+    <string name="welcome_text">Welcome, first time user.</string>
+    <string name="setup_instructions">To access your Amazon account, you must first authorize your phone.  A network connection is required to do this.</string>
+    <string name="qr_auth">Authorize Using QR Code</string>
+    <string name="txt_auth">Authorize Via Password</string>
+    <string name="pwd_instructions">Enter your Amazon ID and enter your Amazon password.</string>
+    <string name="login">Log In</string>
+    <string name="id">Your Amazon ID</string>
+    <string name="pwd">Your Amazon Password</string>
+    <string name="gesture">Set up an unlocking gesture to authorize purchases.</string>
+    <string name="unlock">To make purchases or set changes to tour account from your phone, you must identify yourself first.</string>
+    <string name="gesture_identification">Identify Using Gestures</string>
+    <string name="password_identification">Identify Using Password</string>
+    <string name="gesture_explanation">Unlock your phone by using images and avoid the hassle of passwords.</string>
+    <string name="fin">Finish</string>
+    <string name="fin_msg">Your phone is now authorized to your amazon account and all of you Amazon apps can now be used.</string>
+    <string name="cont">Continue</string>
+    <string name="qr">Scan the QR code to continue the authorization process.</string>
+    <string name="test1">This is the first test app</string>
+    <string name="test2">This is the second test app.</string>
+</resources>
