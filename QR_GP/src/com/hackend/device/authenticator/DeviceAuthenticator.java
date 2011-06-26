@@ -20,10 +20,10 @@ public final class DeviceAuthenticator {
 	{
 			
 	        HttpClient httpclient = new DefaultHttpClient();  
-	        HttpGet request = new HttpGet("http://50.18.82.15/" +  "qr_response.html");
+	        HttpGet request = new HttpGet("http://50.18.82.15/" +  "device_auth.php");
 	        //HttpGet request = new HttpGet("http://google.com/" +  "");
-	        request.addHeader("deviceId", deviceID);
-	        request.addHeader("qrCode", qrCode);
+	        request.addHeader("x-device-id", deviceID);
+	        request.addHeader("x-qr-string", qrCode);
 	        ResponseHandler<String> handler = new BasicResponseHandler();
 	        //boolean result = false;
 	        String result = "";
@@ -62,11 +62,11 @@ public final class DeviceAuthenticator {
      * 	- inform the user that "authentication failed" */
 	public static void authenticateUsingQR(ContentResolver cr, int userId, String qrCode)
 	{
-		String deviceID = "TempId";
+		//String deviceID = "TempId";
 		
 		String android_id = Secure.getString(cr, Secure.ANDROID_ID);
 		System.out.println("android_id = "+android_id);
-		boolean result = serverRequestForAuthentication(userId, qrCode, deviceID);
+		boolean result = serverRequestForAuthentication(userId, qrCode, android_id);
 		
 		if(result == true)
 		{
