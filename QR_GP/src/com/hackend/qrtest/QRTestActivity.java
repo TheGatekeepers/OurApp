@@ -2,6 +2,8 @@ package com.hackend.qrtest;
 
 import android.app.Activity;
 import com.google.zxing.integration.android.IntentIntegrator;
+import com.hackend.device.authenticator.DeviceAuthenticator;
+import android.content.ContentResolver;
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -11,6 +13,7 @@ import android.widget.Button;
 
 public class QRTestActivity extends Activity {
     /** Called when the activity is first created. */
+    private ContentResolver cr;// = getContentResolver();  
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +25,7 @@ public class QRTestActivity extends Activity {
        // TextView tv = new TextView(this);
         //tv.setText("Its QR time!");
         //setContentView(tv);
+        cr = getContentResolver();
     }
     
     public Button.OnClickListener mScan = new Button.OnClickListener() {
@@ -36,7 +40,7 @@ public class QRTestActivity extends Activity {
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         if (requestCode == 0) {
             if (resultCode == RESULT_OK) {
-                String contents = intent.getStringExtra("SCAN_RESULT");
+                String qrCode = intent.getStringExtra("SCAN_RESULT");
                 String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
                 
                 /*Next step is to call a method that would contact the server with the following params:
@@ -49,9 +53,11 @@ public class QRTestActivity extends Activity {
                  * else:
                  * 	- inform the user that "authorization failed" */
                 
-                authenticateUsingQR(userId, contents, deviceId)
-                System.out.println(contents);
-                System.out.print(format);
+                int userId = 10;
+                
+                DeviceAuthenticator.authenticateUsingQR(cr, userId, qrCode);
+                System.out.println("qrCode = "+qrCode);
+                System.out.print("format = "+format);
                 
                 
                 // Handle successful scan
