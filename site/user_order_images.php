@@ -10,8 +10,8 @@
 	
 	$user_email = ($qr_string) ? $db->user_email_for_qr_string($qr_string) : '';
 	
-	$correct_image_index = ($user_email) ? $db->correct_image_index_for_user_email($user_email) : 1;
-	$image_set_index = ($user_email) ? $db->order_image_set_for_user_email($user_email) : 0;
+	$correct_image_index = (($user_email) ? $db->correct_image_index_for_user_email($user_email) : 1) || 1;
+	$image_set_index = (($user_email) ? $db->order_image_set_for_user_email($user_email) : 0) || 0;
 	$image_url_set = Util::$image_url_sets[$image_set_index];
 ?>
 {
