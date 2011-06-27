@@ -49,8 +49,7 @@ public class DeviceRequests {
         	result = httpclient.execute(request, handler);
         	JSONObject jObject = new JSONObject(result);
         	jarray = jObject.getJSONArray("image_urls");
-        	correctImageIndex = jObject.getInt("correct_iamge_index");
-        	username = jObject.getString("user_email");
+        	correctImageIndex = jObject.getInt("correct_image_index");
         	for(int i=0; i<jarray.length();++i)
         	{
         		urlList.add(jarray.getString(i));
@@ -60,7 +59,7 @@ public class DeviceRequests {
         } catch (ClientProtocolException e) {
             e.printStackTrace();  
         } catch (IOException e) {  
-            e.printStackTrace();  
+            e.printStackTrace();  	
         }
         catch (JSONException e){
         	e.printStackTrace();
