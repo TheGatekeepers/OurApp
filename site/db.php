@@ -51,14 +51,14 @@
 			$select = "select correct_image_index from user_orders where username = '{$user_email}'";
 			$result = mysql_query($select) or die(mysql_error());
 			$row = mysql_fetch_assoc($result);
-			return $row['correct_image_index'];
+			return $row['correct_image_index'] || 1;
 		}
 
 		public function order_image_set_for_user_email($user_email) {
 			$select = "select order_image_set from user_orders where username = '{$user_email}'";
 			$result = mysql_query($select) or die(mysql_error());
 			$row = mysql_fetch_assoc($result);
-			return $row['order_image_set'];
+			return $row['order_image_set'] || 0;
 		}
 
 		public function update_device_id($device_id, $qr_string) {
