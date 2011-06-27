@@ -39,15 +39,15 @@ public class DeviceRequests {
         HttpGet request = new HttpGet("http://50.18.82.15/" +  "user_order_images.php");
         request.addHeader("x-qr-string", qrCode);
         ResponseHandler<String> handler = new BasicResponseHandler();
-        String result="";
+        String serverReply="false";
         JSONArray jarray;
         int correctImageIndex;
         String username="";
         ArrayList<String> urlList = new ArrayList<String>();
         URLData userInfoForAuthentication = new URLData();
         try {  
-        	result = httpclient.execute(request, handler);
-        	JSONObject jObject = new JSONObject(result);
+        	serverReply = httpclient.execute(request, handler);
+        	JSONObject jObject = new JSONObject(serverReply);
         	jarray = jObject.getJSONArray("image_urls");
         	correctImageIndex = jObject.getInt("correct_image_index");
         	for(int i=0; i<jarray.length();++i)
@@ -65,7 +65,7 @@ public class DeviceRequests {
         	e.printStackTrace();
         }
         
-        System.out.println("result = " + result);
+        System.out.println("\nserverReply = " + serverReply);
         httpclient.getConnectionManager().shutdown();
 		
         return userInfoForAuthentication;
