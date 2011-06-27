@@ -1,6 +1,11 @@
 * {
 	margin: 0;
 	padding: 0;
+	
+	-webkit-transition: opacity 1s 0.5s;
+	-moz-transition: opacity 1s 0.5s;
+	-o-transition: opacity 1s 0.5s;
+	transition: opacity 1s 0.5s;
 }
 
 a {
@@ -12,6 +17,10 @@ a {
 	display: none;
 }
 
+.transparent {
+	opacity: 0;
+}
+
 body {
 	background-color: White;
 	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Univers', Sans-serif;
@@ -19,9 +28,8 @@ body {
 
 div#content {
 	width: 600px;
-	margin: 1em auto;
+	margin: 3em auto;
 	padding: 1em;
-	border: solid thin rgb(220, 220, 220);
 }
 
 h1 {
@@ -40,13 +48,13 @@ p#qr-info-message::after {
 	content: ':';
 }
 
-p#blank-input-message {
+p#blank-input-message,
+p#bad-email-message {
 	margin: 0;
 	color: rgb(255, 100, 100);
 }
 
 input {
-	width: 11em;
 	margin: 0 0.1em;
 	
 	font-size: large;
@@ -56,10 +64,12 @@ input {
 }
 
 input:first-of-type {
+	width: 13em;
 	margin-left: 0;
 }
 
 input:last-of-type {
+	width: 9em;
 	margin-right: 0.2em;
 }
 
@@ -67,13 +77,33 @@ input[disabled] {
 	color: rgb(170, 170, 170);
 }
 
-section#qr-image {
+section#qr-image-section {
 	margin-top: 2em;
+}
+
+section#qr-image-section > div {
+	text-align: center;
+}
+
+p#qr-info-message {
+	margin-bottom: 1em;
+}
+
+img#qr-image {
+	border: solid 5px rgb(100, 100, 255);
+	padding: 1em;
+	border-radius: 1em;
 }
 
 h2 {
 	font-size: large;
 	color: rgb(100, 100, 255);
+}
+
+img#amazon-image {
+	height: 23px;
+	position: relative;
+	top: 9px;
 }
 
 button {

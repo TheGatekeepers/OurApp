@@ -21,7 +21,7 @@
 	<body> 
 		<div id='content'> 
 			<header> 
-				<h1>Add an Android device to your account</h1>
+				<h1>Add an Android device to your <img id='amazon-image' src='https://s3.amazonaws.com/hackend/amazon.jpg' alt='Amazon' /> account</h1>
 			</header> 
 			
 			<section id='account'>
@@ -30,12 +30,13 @@
 				<input id='password-input' type='password' placeholder='password' x-webkit-speech />
 				<button id='generate-qr-code-button' type='button'>Generate QR code</button>
 				<p id='blank-input-message' class='hidden'>You must enter your Amazon email and password.</p>
+				<p id='bad-email-message' class='hidden'>You must enter a valid email.</p>
 			</section>
 			
-			<section id='qr-image-section' class='hidden'>
+			<section id='qr-image-section' class='transparent'>
 				<h2>Your QR code has been generated</h2>
 				<p id='qr-info-message'>Scan this code with your Android application to tie your device to this account</p>
-				<img id='qr-image' src='' alt='QR code for Android device authentication'  />
+				<div><img id='qr-image' src='' alt='QR code for Android device authentication'  /></div>
 			</section>
 		</div> 
 	</body> 
