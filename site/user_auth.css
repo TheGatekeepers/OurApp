@@ -63,6 +63,10 @@ input:last-of-type {
 	margin-right: 0.2em;
 }
 
+input[disabled] {
+	color: rgb(170, 170, 170);
+}
+
 section#qr-image {
 	margin-top: 2em;
 }
@@ -112,4 +116,11 @@ button:active {
 	background-color: rgb(237, 235, 232);
 	background: -moz-linear-gradient(bottom, rgb(237, 235, 232), rgb(230, 230, 230));
 	background: -webkit-gradient(linear, left bottom, left top, from(rgb(237, 235, 232)), to(rgb(230, 230, 230)));
+}
+
+button.inactive {
+	background: rgb(230, 230, 230);
+	color: rgb(170, 170, 170);
+	border: solid thin rgb(200, 200, 200);
+	cursor: auto;
 }

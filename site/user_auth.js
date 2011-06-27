@@ -11,8 +11,6 @@ window.init = function() {
 };
 
 window.generateQrCodeButtonWasPressed = function() {
-	window.generateButton.onclick = null;
-	
 	if (!emailInput.value || !passwordInput.value) {
 		window.blankInputMessage.show();
 	} else {
@@ -24,6 +22,11 @@ window.showQrCode = function() {
 	window.addDbEntry(emailInput.value);
 	window.blankInputMessage.hide();
 	window.qrImageSection.show();
+	
+	window.generateButton.onclick = null;
+	window.generateButton.className = 'inactive';
+	window.emailInput.disabled = true;
+	window.passwordInput.disabled = true;
 };
 
 window.addDbEntry = function(userEmail) {

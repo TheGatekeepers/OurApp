@@ -40,6 +40,27 @@
 			return mysql_num_rows($result) == 1;
 		}
 
+		public function user_email_for_qr_string($qr_string) {
+			$select = "select username from devices where qr_string = '{$qr_string}'";
+			$result = mysql_query($select) or die(mysql_error());
+			$row = mysql_fetch_assoc($result);
+			return $row['username'];
+		}
+
+		public function correct_image_index_for_user_email($user_email) {
+			$select = "select correct_image_index from user_orders where username = '{$user_email}'";
+			$result = mysql_query($select) or die(mysql_error());
+			$row = mysql_fetch_assoc($result);
+			return $row['correct_image_index'];
+		}
+
+		public function order_image_set_for_user_email($user_email) {
+			$select = "select order_image_set from user_orders where username = '{$user_email}'";
+			$result = mysql_query($select) or die(mysql_error());
+			$row = mysql_fetch_assoc($result);
+			return $row['order_image_set'];
+		}
+
 		public function update_device_id($device_id, $qr_string) {
 			$update = "update devices set device_id = '{$device_id}' where qr_string = '{$qr_string}'";
 			mysql_query($update) or die(mysql_error());

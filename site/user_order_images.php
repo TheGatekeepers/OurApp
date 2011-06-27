@@ -16,6 +16,5 @@
 ?>
 {
 	image_urls : <?=$image_url_set?>,
-	correct_image_index : <?=$correct_image_index?>,
-	user_email : <?=$user_email?>
+	correct_image_index : <?=$correct_image_index?>
 }
