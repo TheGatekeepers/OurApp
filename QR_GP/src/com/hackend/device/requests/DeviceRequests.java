@@ -16,7 +16,24 @@ public class DeviceRequests {
 	
 	private DeviceRequests(){}
 	
-	public static ArrayList<String> getImageURLs(String qrCode)
+	public static class URLData
+	{
+		private String userId;
+		private int correctImageIndex;
+		private ArrayList<String> imageURLList;
+		
+		public void setInfo(String user, int correctImage, ArrayList<String> urlList)
+		{
+			userId = user;
+			correctImageIndex = correctImage;
+			imageURLList = urlList;
+		}
+		public String getUserId() { return userId;}
+		public int correctImageIndex() { return correctImageIndex; }
+		public ArrayList<String> getImageURLList() { return imageURLList; }
+	}
+	
+	public static URLData getImageURLs(String qrCode)
 	{
 		HttpClient httpclient = new DefaultHttpClient();  
         HttpGet request = new HttpGet("http://50.18.82.15/" +  "user_order_images.php");
@@ -24,16 +41,22 @@ public class DeviceRequests {
         ResponseHandler<String> handler = new BasicResponseHandler();
         String result="";
         JSONArray jarray;
+        int correctImageIndex;
+        String username="";
         ArrayList<String> urlList = new ArrayList<String>();
+        URLData userInfoForAuthentication = new URLData();
         try {  
         	result = httpclient.execute(request, handler);
         	JSONObject jObject = new JSONObject(result);
         	jarray = jObject.getJSONArray("image_urls");
+        	correctImageIndex = jObject.getInt("correct_iamge_index");
+        	username = jObject.getString("user_email");
         	for(int i=0; i<jarray.length();++i)
         	{
         		urlList.add(jarray.getString(i));
         		System.out.println("jarray["+i+"]="+jarray.getString(i));
         	}
+        	userInfoForAuthentication.setInfo(username,correctImageIndex,urlList);
         } catch (ClientProtocolException e) {
             e.printStackTrace();  
         } catch (IOException e) {  
@@ -46,8 +69,7 @@ public class DeviceRequests {
         System.out.println("result = " + result);
         httpclient.getConnectionManager().shutdown();
 		
-        return urlList;
-		//return false;
+        return userInfoForAuthentication;
 	}
 
 }
