@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="image1">1</integer>
+    <integer name="image2">2</integer>
+    <integer name="image3">3</integer>
+    <integer name="image4">4</integer>
+    <integer name="image5">5</integer>
+    <integer name="image6">6</integer>
+    <integer name="image7">7</integer>
+    <integer name="image8">8</integer>
+    <integer name="image9">9</integer>
+</resources>

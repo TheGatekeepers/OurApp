@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:cacheColorHint="#00000000"
+    android:background="#ffffff"
+    android:stretchColumns="1" android:orientation="vertical">
+    <LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:orientation="vertical" android:id="@+id/Linear_Vertical_Main">
+        <LinearLayout android:layout_height="wrap_content" android:orientation="horizontal" android:layout_width="match_parent" android:layout_margin="10dip" android:id="@+id/Linear_Horizontal_Images_1">
+            <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/me2" android:id="@integer/image1"></ImageView>
+            <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/me3" android:id="@integer/image2"></ImageView>
+            <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/xbox360" android:id="@integer/image3"></ImageView>
+        </LinearLayout>
+        <LinearLayout android:layout_height="wrap_content" android:orientation="horizontal" android:layout_width="match_parent" android:layout_margin="10dip" android:id="@+id/Linear_Horizontal_Images_2">
+            <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/codmw3" android:id="@integer/image4"></ImageView>
+            <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/duke_nukem_forever" android:id="@integer/image5"></ImageView>
+            <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/gears3" android:id="@integer/image6"></ImageView>
+        </LinearLayout>
+        <LinearLayout android:layout_height="wrap_content" android:orientation="horizontal" android:layout_width="match_parent" android:layout_margin="10dip" android:id="@+id/Linear_Horizontal_Images_3">
+            <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/assassains_creed_brotherhood" android:id="@integer/image7"></ImageView>
+            <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/battlefield_3" android:id="@integer/image8"></ImageView>
+            <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/bioshock2" android:id="@integer/image9"></ImageView>
+        </LinearLayout>
+    </LinearLayout>
+    <TextView android:text="TestText" android:textAppearance="?android:attr/textAppearanceLarge" android:layout_width="wrap_content" android:textColor="#000000" android:layout_height="wrap_content" android:id="@+id/textView1" android:layout_margin="10dip"></TextView>
+    <TextView android:text="TestText" android:textAppearance="?android:attr/textAppearanceLarge" android:layout_width="wrap_content" android:textColor="#000000" android:layout_height="wrap_content" android:layout_margin="10dip" android:id="@+id/textView2"></TextView>
+</LinearLayout>
